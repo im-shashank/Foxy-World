@@ -1,0 +1,68 @@
+[gd_scene load_steps=5 format=3 uid="uid://diujb8puu1ova"]
+
+[ext_resource type="Script" path="res://death_screen.gd" id="1_1qhwn"]
+[ext_resource type="Texture2D" uid="uid://5ytk4fwn8j15" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/environment/Background/back.png" id="1_skiuj"]
+[ext_resource type="Texture2D" uid="uid://b323yf55a50sw" path="res://Sunny-land-files/Sunny-land-files/Graphical Assets/environment/Background/middle.png" id="2_lgw1v"]
+[ext_resource type="Script" path="res://DeathSceneBackGround.gd" id="2_o5p75"]
+
+[node name="DeathScreen" type="Node2D"]
+script = ExtResource("1_1qhwn")
+
+[node name="DeathSceneBackGround" type="ParallaxBackground" parent="."]
+script = ExtResource("2_o5p75")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="DeathSceneBackGround"]
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Back" type="Sprite2D" parent="DeathSceneBackGround/ParallaxLayer"]
+position = Vector2(575.5, 326)
+scale = Vector2(3.02865, 2.73333)
+texture = ExtResource("1_skiuj")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="DeathSceneBackGround"]
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Middle" type="Sprite2D" parent="DeathSceneBackGround/ParallaxLayer2"]
+position = Vector2(80, 476)
+texture = ExtResource("2_lgw1v")
+
+[node name="Middle2" type="Sprite2D" parent="DeathSceneBackGround/ParallaxLayer2"]
+position = Vector2(1110, 474)
+texture = ExtResource("2_lgw1v")
+
+[node name="Middle3" type="Sprite2D" parent="DeathSceneBackGround/ParallaxLayer2"]
+position = Vector2(936, 478)
+texture = ExtResource("2_lgw1v")
+
+[node name="Middle4" type="Sprite2D" parent="DeathSceneBackGround/ParallaxLayer2"]
+position = Vector2(766, 480)
+texture = ExtResource("2_lgw1v")
+
+[node name="Middle5" type="Sprite2D" parent="DeathSceneBackGround/ParallaxLayer2"]
+position = Vector2(598, 480)
+texture = ExtResource("2_lgw1v")
+
+[node name="Middle6" type="Sprite2D" parent="DeathSceneBackGround/ParallaxLayer2"]
+position = Vector2(424, 478)
+texture = ExtResource("2_lgw1v")
+
+[node name="Middle7" type="Sprite2D" parent="DeathSceneBackGround/ParallaxLayer2"]
+position = Vector2(254, 476)
+texture = ExtResource("2_lgw1v")
+
+[node name="Main Menu" type="Button" parent="."]
+offset_left = 472.0
+offset_top = 386.0
+offset_right = 674.0
+offset_bottom = 458.0
+text = "Main Menu"
+
+[node name="Play Again" type="Button" parent="."]
+offset_left = 474.0
+offset_top = 276.0
+offset_right = 676.0
+offset_bottom = 348.0
+text = "Play Again"
+
+[connection signal="pressed" from="Main Menu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="Play Again" to="." method="_on_play_again_pressed"]

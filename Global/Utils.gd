@@ -19,3 +19,7 @@ func loadGame():
 			if currentLine:
 				Game.playerHP = currentLine["playerHP"]
 				Game.gold = currentLine["gold"]
+
+func revertState():
+	Game.playerHP = 10
+	Game.gold = 0
